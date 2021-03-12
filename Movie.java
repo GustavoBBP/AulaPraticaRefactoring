@@ -40,7 +40,17 @@ public class Movie {
 		   if (daysRented > 3)
 			   thisAmount += (daysRented - 3) * 1.5;
 		   break;
-		}
-		return thisAmount;
-	}
+	  }
+	  return thisAmount;
+  }
+  
+  public int getFrequentRenterPoints(int daysRented) {
+	  int frequentRenterPoints = 1;
+		
+		if ((getPriceCode() == Movie.NEW_RELEASE) && daysRented() > 1)
+			frequentRenterPoints ++;
+		
+		return frequentRenterPoints;
+   }
+   
 }
